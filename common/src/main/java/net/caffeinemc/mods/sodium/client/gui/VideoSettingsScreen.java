@@ -181,7 +181,7 @@ public class VideoSettingsScreen extends Screen implements ScreenPromptable, Scr
             reserveBottomSpace = true;
         }
 
-        this.closeButton = new FlatButtonWidget(new Dim2i(this.getLimitX() - Layout.BUTTON_LONG - ifNotInsetX(Layout.INNER_MARGIN), this.getLimitY() - (ifNotInsetY(Layout.INNER_MARGIN) + Layout.BUTTON_SHORT), Layout.BUTTON_LONG, Layout.BUTTON_SHORT), Component.translatable("gui.done"), this::onClose, true, false);
+        this.closeButton = new FlatButtonWidget(new Dim2i(this.width - Layout.BUTTON_LONG - Layout.INNER_MARGIN, this.height - (Layout.INNER_MARGIN + Layout.BUTTON_SHORT), Layout.BUTTON_LONG, Layout.BUTTON_SHORT), Component.translatable("gui.done"), this::onClose, true, false);
         this.addRenderableWidget(this.closeButton);
 
         if (stackVertically) {
@@ -250,8 +250,8 @@ public class VideoSettingsScreen extends Screen implements ScreenPromptable, Scr
 
         // center the content area
         this.dim = new Dim2i(
-                (this.width - contentWidth) / 2,
-                (this.height - contentHeight) / 2,
+                0,
+                (this.height - contentHeight) /2,
                 contentWidth,
                 contentHeight
         );
